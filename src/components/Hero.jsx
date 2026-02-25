@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import carImage from "../assets/car.png";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
@@ -14,7 +14,7 @@ export default function Hero() {
   useEffect(() => {
     const ctx = gsap.context(() => {
 
-      // 🚗 Road always moving
+    
      gsap.to(roadRef.current, {
   x: "-50%",
   duration: 10,
@@ -22,7 +22,7 @@ export default function Hero() {
   ease: "none"
 });
 
-      // 🧠 Main Scroll Timeline
+   
 const tl = gsap.timeline({
   scrollTrigger: {
     trigger: sectionRef.current,
@@ -34,21 +34,21 @@ const tl = gsap.timeline({
   }
 });
 
-// 🚗 Car drives full timeline (duration 5)
+
 tl.to(carRef.current, {
   x: window.innerWidth - carRef.current.offsetWidth - 50,
   ease: "none",
   duration: 5
 }, 0);
 
-// ✨ Text starts when car is around middle (at 2 seconds)
+
 tl.fromTo(textRef.current,
   { opacity: 0, y: 100 },
   { opacity: 1, y: 0, duration: 1.2 },
   2
 );
 
-// 📦 Boxes appear slightly after text
+
 tl.fromTo(boxesRef.current.children,
   { opacity: 0, y: 200 },
   { opacity: 1, y: 0, stagger: 0.2, duration: 1 },
@@ -67,12 +67,11 @@ tl.fromTo(boxesRef.current.children,
       <div className="scene">
         <div className="sun"></div>
         <img
-          ref={carRef}
-          src="/car.png"
-          alt="car"
-          className="car"
-        />
-        
+  ref={carRef}
+  src={carImage}  
+  alt="car"
+  className="car"
+/>
 
         <div className="road">
           <div className="road-lines" ref={roadRef}></div>
