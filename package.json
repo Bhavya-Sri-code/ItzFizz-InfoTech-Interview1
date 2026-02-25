@@ -10,7 +10,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
-  "homepage": "https://yourusername.github.io/car-scroll-animation",
+ "homepage": "https://Bhavya-Sri-code.github.io/ItzFizz-InfoTech-Interview1",
   "dependencies": {
     "gh-pages": "^6.3.0",
     "gsap": "^3.14.2",
